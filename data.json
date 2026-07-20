@@ -1,21 +1,46 @@
 [
   {
-    "certificateNo":"DC-2026-0701",
-
-    "name":"ATUL PRATAP SINGH",
-
-    "roll":"25401",
-
-    "mobile":"9102432279",
-
-    "address":"Patna, Bihar",
-
-    "photo":"images/atul.jpg",
-
-    "project":"Internship / Industrial Training - Field Exposure and Structural Analysis of a G+11 Multi-Storey RCC Framed Structure",
-
-    "training":"Monday, 20 July 2026 – Monday, 3 August 2026 (2 Weeks)",
-
-    "score":"94"
+    "certificateNo": "DC-2026-0701",
+    "name": "ATUL PRATAP SINGH",
+    "roll": "25401",
+    "mobile": "9102432279",
+    "address": "PATNA, Bihar",
+    "photo": "images/atul.jpg",
+    "project": "Internship / Industrial Training - Field Exposure and Structural Analysis of a G+11 Multi-Storey RCC Framed Structure",
+    "training": "Monday, 20th July 2026 – Monday, 3rd August 2026 (2 Weeks)",
+    "score": "93"
+  },
+  {
+    "certificateNo": "DC-2026-0702",
+    "name": "ANMOL VANSH",
+    "roll": "25402",
+    "mobile": "9835806189",
+    "address": "PATNA, Bihar",
+    "photo": "images/anmol.jpg",
+    "project": "Internship / Industrial Training - Field Exposure and Structural Analysis of a G+11 Multi-Storey RCC Framed Structure",
+    "training": "Monday, 20th July 2026 – Monday, 3rd August 2026 (2 Weeks)",
+    "score": "92"
+  },
+  {
+    "certificateNo": "DC-2026-0703",
+    "name": "SANJEEV KUMAR",
+    "roll": "25403",
+    "mobile": "9661765726",
+    "address": "SHEOHAR, Bihar",
+    "photo": "images/sanjeev.jpg",
+    "project": "Internship / Industrial Training - Field Exposure and Structural Analysis of a G+11 Multi-Storey RCC Framed Structure",
+    "training": "Monday, 20th July 2026 – Monday, 3rd August 2026 (2 Weeks)",
+    "score": "97"
+  },
+  {
+    "certificateNo": "DC-2026-0704",
+    "name": "SHUBHAM KUMAR",
+    "roll": "25410",
+    "mobile": "9241499938",
+    "address": "EAST CHAMPARAN, Bihar",
+    "photo": "images/shubham.jpg",
+    "project": "Internship / Industrial Training - Field Exposure and Structural Analysis of a G+11 Multi-Storey RCC Framed Structure",
+    "training": "Monday, 20th July 2026 – Monday, 3rd August 2026 (2 Weeks)",
+    "score": "94"
   }
 ]
