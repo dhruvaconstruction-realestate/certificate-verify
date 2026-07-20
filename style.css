@@ -1,168 +1,106 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
 body{
+    margin:0;
+    padding:15px;
     background:#eef3f8;
-    padding:40px;
+    font-family:Arial,sans-serif;
 }
 
 .container{
-
     max-width:900px;
+    width:100%;
     margin:auto;
-
-    background:white;
-
+    background:#fff;
     border-radius:15px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
-
     overflow:hidden;
-
-}
-
-.header{
-
-    background:#0A3D62;
-
-    color:white;
-
-    text-align:center;
-
-    padding:30px;
-
-}
-
-.logo{
-
-    width:120px;
-
-    margin-bottom:15px;
-
-}
-
-.header h1{
-
-    font-size:34px;
-
-}
-
-.header h2{
-
-    margin-top:10px;
-
-    font-weight:400;
-
-    color:#dbeafe;
-
-}
-
-.verified{
-
-    background:#16a34a;
-
-    color:white;
-
-    text-align:center;
-
-    padding:15px;
-
-    font-size:24px;
-
-    font-weight:bold;
-
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
 .certificate-box{
-
     display:flex;
-
-    gap:40px;
-
-    padding:40px;
-
+    gap:30px;
+    padding:25px;
 }
 
 .photo-section{
-
     width:220px;
-
+    text-align:center;
 }
 
 .photo-section img{
-
     width:100%;
-
+    max-width:200px;
     border-radius:10px;
-
-    border:5px solid #0A3D62;
-
 }
 
 .details{
-
     flex:1;
-
 }
 
 .details p{
-
-    margin-bottom:18px;
-
-    font-size:18px;
-
-    line-height:1.6;
-
+    font-size:17px;
+    line-height:1.7;
 }
 
-.footer{
+/* Mobile Responsive */
 
-    background:#f7f7f7;
+@media (max-width:768px){
 
-    padding:25px;
-
-    text-align:center;
-
-    font-size:18px;
-
+body{
+    padding:8px;
 }
 
-.footer strong{
-
-    color:#0A3D62;
-
+.container{
+    width:100%;
+    border-radius:10px;
 }
 
-@media(max-width:768px){
-
-.certificate-box{
-
-flex-direction:column;
-
+.header{
+    padding:20px 10px;
 }
 
-.photo-section{
-
-width:100%;
-
-text-align:center;
-
-}
-
-.photo-section img{
-
-width:220px;
-
+.logo{
+    width:80px;
 }
 
 .header h1{
+    font-size:22px;
+}
 
-font-size:24px;
+.header h2{
+    font-size:15px;
+}
 
+.verified{
+    font-size:18px;
+    padding:12px;
+}
+
+.certificate-box{
+    flex-direction:column;
+    align-items:center;
+    padding:15px;
+}
+
+.photo-section{
+    width:150px;
+}
+
+.photo-section img{
+    width:150px;
+}
+
+.details{
+    width:100%;
+}
+
+.details p{
+    font-size:15px;
+    margin-bottom:12px;
+}
+
+.footer{
+    font-size:14px;
+    padding:15px;
 }
 
 }
