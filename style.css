@@ -1,25 +1,73 @@
-body{
+*{
     margin:0;
-    padding:15px;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
     background:#eef3f8;
-    font-family:Arial,sans-serif;
+    padding:15px;
 }
 
 .container{
-    max-width:900px;
     width:100%;
+    max-width:950px;
     margin:auto;
     background:#fff;
     border-radius:15px;
     overflow:hidden;
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
+
+/* Header */
+
+.header{
+    background:#083b66;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    margin-bottom:10px;
+}
+
+.header h1{
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.header h2{
+    font-size:18px;
+    color:#d9e8f7;
+    font-weight:normal;
+}
+
+/* Verified */
+
+.verified{
+    background:#0f9d58;
+    color:white;
+    text-align:center;
+    padding:15px;
+    font-size:24px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+/* Main */
 
 .certificate-box{
     display:flex;
-    gap:30px;
-    padding:25px;
+    gap:35px;
+    padding:35px;
 }
+
+/* Photo */
 
 .photo-section{
     width:220px;
@@ -27,30 +75,54 @@ body{
 }
 
 .photo-section img{
-    width:100%;
-    max-width:200px;
-    border-radius:10px;
+    width:160px;
+    height:200px;
+    object-fit:cover;
+    border:4px solid #083b66;
+    border-radius:8px;
+    background:white;
+    box-shadow:0 6px 15px rgba(0,0,0,.25);
 }
+
+/* Details */
 
 .details{
     flex:1;
 }
 
 .details p{
-    font-size:17px;
+    margin-bottom:15px;
+    font-size:18px;
     line-height:1.7;
 }
 
-/* Mobile Responsive */
+.details strong{
+    color:#083b66;
+}
 
-@media (max-width:768px){
+/* Footer */
+
+.footer{
+    background:#f5f5f5;
+    text-align:center;
+    padding:25px;
+    font-size:18px;
+    line-height:1.7;
+}
+
+.footer strong{
+    color:#083b66;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
 
 body{
     padding:8px;
 }
 
 .container{
-    width:100%;
     border-radius:10px;
 }
 
@@ -59,7 +131,8 @@ body{
 }
 
 .logo{
-    width:80px;
+    width:70px;
+    height:70px;
 }
 
 .header h1{
@@ -67,7 +140,7 @@ body{
 }
 
 .header h2{
-    font-size:15px;
+    font-size:14px;
 }
 
 .verified{
@@ -78,15 +151,16 @@ body{
 .certificate-box{
     flex-direction:column;
     align-items:center;
-    padding:15px;
+    padding:18px;
 }
 
 .photo-section{
-    width:150px;
+    width:100%;
 }
 
 .photo-section img{
-    width:150px;
+    width:130px;
+    height:165px;
 }
 
 .details{
@@ -99,8 +173,8 @@ body{
 }
 
 .footer{
+    padding:18px;
     font-size:14px;
-    padding:15px;
 }
 
 }
