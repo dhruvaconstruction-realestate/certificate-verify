@@ -1,180 +1,753 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:#eef3f8;
-    padding:15px;
+:root {
+    --navy: #083b66;
+    --dark-navy: #062d4d;
+    --blue: #1769aa;
+    --green: #149447;
+    --light-green: #eaf8ef;
+    --red: #c62828;
+    --light-red: #fff0f0;
+    --background: #eef3f8;
+    --white: #ffffff;
+    --border: #d9e1e8;
+    --text: #202b36;
+    --muted: #687582;
 }
 
-.container{
-    width:100%;
-    max-width:950px;
-    margin:auto;
-    background:#fff;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.5;
 }
 
-/* Header */
 
-.header{
-    background:#083b66;
-    color:white;
-    text-align:center;
-    padding:25px;
+/* =========================
+   PAGE
+========================= */
+
+.page {
+    width: 100%;
+    max-width: 980px;
+    margin: 25px auto;
+    padding: 0 15px;
 }
 
-.logo{
-    width:90px;
-    height:90px;
-    object-fit:contain;
-    margin-bottom:10px;
+
+/* =========================
+   COMPANY HEADER
+========================= */
+
+.company-header {
+    background: var(--white);
+    border-radius: 16px 16px 0 0;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 4px solid var(--navy);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
-.header h1{
-    font-size:32px;
-    margin-bottom:8px;
+.logo-wrapper {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
 }
 
-.header h2{
-    font-size:18px;
-    color:#d9e8f7;
-    font-weight:normal;
+.company-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
 }
 
-/* Verified */
-
-.verified{
-    background:#0f9d58;
-    color:white;
-    text-align:center;
-    padding:15px;
-    font-size:24px;
-    font-weight:bold;
-    letter-spacing:1px;
+.logo-fallback {
+    display: none;
+    width: 90px;
+    height: 90px;
+    background: var(--navy);
+    color: white;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    font-weight: bold;
 }
 
-/* Main */
-
-.certificate-box{
-    display:flex;
-    gap:35px;
-    padding:35px;
+.company-info h1 {
+    color: var(--navy);
+    font-size: 30px;
+    letter-spacing: 0.5px;
 }
 
-/* Photo */
-
-.photo-section{
-    width:220px;
-    text-align:center;
+.company-info p {
+    color: var(--muted);
+    font-size: 17px;
+    margin-top: 5px;
 }
 
-.photo-section img{
-    width:160px;
-    height:200px;
-    object-fit:cover;
-    border:4px solid #083b66;
-    border-radius:8px;
-    background:white;
-    box-shadow:0 6px 15px rgba(0,0,0,.25);
+
+/* =========================
+   VERIFICATION STATUS
+========================= */
+
+.verification-status {
+    background: var(--green);
+    color: white;
+    padding: 17px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
 }
 
-/* Details */
-
-.details{
-    flex:1;
+.verified-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: white;
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 22px;
 }
 
-.details p{
-    margin-bottom:15px;
-    font-size:18px;
-    line-height:1.7;
+.verification-status h2 {
+    font-size: 20px;
 }
 
-.details strong{
-    color:#083b66;
+.verification-status p {
+    font-size: 13px;
+    opacity: 0.95;
 }
 
-/* Footer */
 
-.footer{
-    background:#f5f5f5;
-    text-align:center;
-    padding:25px;
-    font-size:18px;
-    line-height:1.7;
+/* =========================
+   LOADING
+========================= */
+
+.message-card {
+    background: white;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 0 0 16px 16px;
 }
 
-.footer strong{
-    color:#083b66;
+.loader {
+    width: 38px;
+    height: 38px;
+    border: 4px solid #dbe4ec;
+    border-top: 4px solid var(--navy);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
 }
 
-/* Mobile */
-
-@media(max-width:768px){
-
-body{
-    padding:8px;
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.container{
-    border-radius:10px;
+
+/* =========================
+   CERTIFICATE
+========================= */
+
+.certificate {
+    background: white;
+    padding: 25px;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
-.header{
-    padding:20px 10px;
+
+/* =========================
+   CERTIFICATE NUMBER
+========================= */
+
+.certificate-number {
+    background: #f1f6fa;
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--navy);
+    border-radius: 8px;
+    padding: 13px 17px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo{
-    width:70px;
-    height:70px;
+.certificate-number span {
+    color: var(--muted);
+    font-size: 14px;
 }
 
-.header h1{
-    font-size:22px;
+.certificate-number strong {
+    color: var(--navy);
+    font-size: 18px;
 }
 
-.header h2{
-    font-size:14px;
+
+/* =========================
+   CANDIDATE
+========================= */
+
+.candidate-section {
+    display: flex;
+    gap: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border);
 }
 
-.verified{
-    font-size:18px;
-    padding:12px;
+.photo-column {
+    width: 180px;
+    flex-shrink: 0;
+    text-align: center;
 }
 
-.certificate-box{
-    flex-direction:column;
-    align-items:center;
-    padding:18px;
+.photo-frame {
+    width: 150px;
+    height: 190px;
+    margin: auto;
+    background: #f5f7f9;
+    border: 4px solid var(--navy);
+    border-radius: 7px;
+    padding: 2px;
+    overflow: hidden;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
-.photo-section{
-    width:100%;
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.photo-section img{
-    width:130px;
-    height:165px;
+.photo-label {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 8px;
 }
 
-.details{
-    width:100%;
+.personal-details {
+    flex: 1;
 }
 
-.details p{
-    font-size:15px;
-    margin-bottom:12px;
+.personal-details h3,
+.section-card h3,
+.performance-card h3 {
+    color: var(--navy);
+    font-size: 19px;
+    margin-bottom: 17px;
 }
 
-.footer{
-    padding:18px;
-    font-size:14px;
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
 }
+
+.detail-item {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 11px 13px;
+}
+
+.label {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.value {
+    display: block;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 15px;
+    word-break: break-word;
+}
+
+
+/* =========================
+   TRAINING
+========================= */
+
+.section-card {
+    margin-top: 25px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.section-card h3 {
+    background: var(--navy);
+    color: white;
+    padding: 13px 17px;
+    margin: 0;
+    font-size: 17px;
+}
+
+.information-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    padding: 14px 17px;
+    border-bottom: 1px solid var(--border);
+    gap: 15px;
+}
+
+.information-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-weight: bold;
+    color: var(--navy);
+}
+
+.info-value {
+    color: var(--text);
+    word-break: break-word;
+}
+
+.project-row .info-value {
+    line-height: 1.6;
+}
+
+
+/* =========================
+   PERFORMANCE
+========================= */
+
+.performance-card {
+    margin-top: 25px;
+    padding: 20px;
+    background: var(--light-green);
+    border: 1px solid #bce3c9;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.performance-card h3 {
+    margin-bottom: 3px;
+    color: #146c35;
+}
+
+.performance-card p {
+    color: #4f6656;
+    font-size: 13px;
+}
+
+.score {
+    color: var(--green);
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.score small {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+
+.success-message {
+    margin-top: 25px;
+    padding: 18px;
+    background: var(--light-green);
+    border: 1px solid #bce3c9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.success-check {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--green);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    flex-shrink: 0;
+}
+
+.success-message h3 {
+    color: #146c35;
+    font-size: 17px;
+    margin-bottom: 3px;
+}
+
+.success-message p {
+    color: #52665a;
+    font-size: 13px;
+}
+
+.success-message strong {
+    color: #146c35;
+    font-size: 14px;
+}
+
+
+/* =========================
+   CERTIFICATE FOOTER
+========================= */
+
+.certificate-footer {
+    margin-top: 25px;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.certificate-footer strong {
+    display: block;
+    color: var(--navy);
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.certificate-footer span {
+    display: block;
+    margin-top: 3px;
+}
+
+.footer-line {
+    width: 70px;
+    height: 2px;
+    background: var(--navy);
+    margin: 12px auto;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error-card {
+    background: white;
+    padding: 45px 20px;
+    text-align: center;
+    border-radius: 0 0 16px 16px;
+    border-top: 4px solid var(--red);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.error-icon {
+    width: 55px;
+    height: 55px;
+    background: var(--light-red);
+    color: var(--red);
+    border: 2px solid var(--red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.error-card h2 {
+    color: var(--red);
+    margin-top: 15px;
+}
+
+.error-card p {
+    color: var(--muted);
+    margin-top: 7px;
+}
+
+.searched-id {
+    margin: 20px auto 0;
+    padding: 10px;
+    background: #fafafa;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    max-width: 400px;
+    font-size: 13px;
+}
+
+.searched-id span {
+    color: var(--red);
+    word-break: break-all;
+}
+
+
+/* =========================
+   SITE FOOTER
+========================= */
+
+.site-footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 15px;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .page {
+        margin: 8px auto;
+        padding: 0 7px;
+    }
+
+    .company-header {
+        padding: 18px 12px;
+        gap: 12px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .logo-wrapper,
+    .company-logo,
+    .logo-fallback {
+        width: 62px;
+        height: 62px;
+    }
+
+    .logo-fallback {
+        font-size: 30px;
+    }
+
+    .company-info h1 {
+        font-size: 18px;
+        line-height: 1.25;
+    }
+
+    .company-info p {
+        font-size: 12px;
+        margin-top: 3px;
+    }
+
+    .verification-status {
+        padding: 12px 10px;
+    }
+
+    .verified-icon {
+        width: 29px;
+        height: 29px;
+        font-size: 18px;
+    }
+
+    .verification-status h2 {
+        font-size: 16px;
+    }
+
+    .verification-status p {
+        font-size: 11px;
+    }
+
+    .certificate {
+        padding: 14px;
+    }
+
+    .certificate-number {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 11px;
+        margin-bottom: 18px;
+    }
+
+    .certificate-number strong {
+        font-size: 16px;
+    }
+
+    .candidate-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .photo-column {
+        width: 100%;
+    }
+
+    .photo-frame {
+        width: 125px;
+        height: 160px;
+    }
+
+    .personal-details {
+        width: 100%;
+    }
+
+    .personal-details h3 {
+        font-size: 17px;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .detail-item {
+        padding: 9px 11px;
+    }
+
+    .value {
+        font-size: 14px;
+    }
+
+    .section-card {
+        margin-top: 18px;
+    }
+
+    .section-card h3 {
+        font-size: 15px;
+        padding: 11px 13px;
+    }
+
+    .information-row {
+        grid-template-columns: 1fr;
+        gap: 3px;
+        padding: 11px 13px;
+    }
+
+    .info-label {
+        font-size: 12px;
+    }
+
+    .info-value {
+        font-size: 14px;
+    }
+
+    .performance-card {
+        margin-top: 18px;
+        padding: 15px;
+    }
+
+    .performance-card h3 {
+        font-size: 16px;
+    }
+
+    .score {
+        font-size: 34px;
+    }
+
+    .score small {
+        font-size: 15px;
+    }
+
+    .success-message {
+        margin-top: 18px;
+        padding: 14px;
+    }
+
+    .success-check {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+
+    .success-message h3 {
+        font-size: 14px;
+    }
+
+    .success-message p,
+    .success-message strong {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+    .company-header {
+        gap: 8px;
+    }
+
+    .logo-wrapper,
+    .company-logo,
+    .logo-fallback {
+        width: 52px;
+        height: 52px;
+    }
+
+    .company-info h1 {
+        font-size: 15px;
+    }
+
+    .company-info p {
+        font-size: 10px;
+    }
+
+    .verification-status h2 {
+        font-size: 14px;
+    }
+
+    .verification-status p {
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================
+   PRINT
+========================= */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    .page {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .company-header,
+    .certificate,
+    .message-card,
+    .error-card {
+        box-shadow: none;
+    }
+
+    .site-footer {
+        display: none;
+    }
 
 }
