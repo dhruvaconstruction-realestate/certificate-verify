@@ -1,40 +1,73 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const loading = document.getElementById("loading");
-    const certificateContent = document.getElementById("certificateContent");
-    const errorBox = document.getElementById("errorBox");
+    const loading =
+        document.getElementById("loading");
 
-    const certificateNo = document.getElementById("certificateNo");
-    const candidateName = document.getElementById("candidateName");
-    const candidateRoll = document.getElementById("candidateRoll");
-    const candidateMobile = document.getElementById("candidateMobile");
-    const candidateAddress = document.getElementById("candidateAddress");
-    const candidatePhoto = document.getElementById("candidatePhoto");
-    const institute = document.getElementById("institute");
-    const project = document.getElementById("project");
-    const training = document.getElementById("training");
-    const score = document.getElementById("score");
+    const certificateContent =
+        document.getElementById("certificateContent");
 
-    const errorTitle = document.getElementById("errorTitle");
-    const errorMessage = document.getElementById("errorMessage");
-    const searchedId = document.getElementById("searchedId");
+    const errorBox =
+        document.getElementById("errorBox");
+
+
+    const certificateNo =
+        document.getElementById("certificateNo");
+
+    const candidateName =
+        document.getElementById("candidateName");
+
+    const candidateRoll =
+        document.getElementById("candidateRoll");
+
+    const candidateMobile =
+        document.getElementById("candidateMobile");
+
+    const candidateAddress =
+        document.getElementById("candidateAddress");
+
+    const candidatePhoto =
+        document.getElementById("candidatePhoto");
+
+    const institute =
+        document.getElementById("institute");
+
+    const project =
+        document.getElementById("project");
+
+    const training =
+        document.getElementById("training");
+
+    const score =
+        document.getElementById("score");
+
+
+    const errorTitle =
+        document.getElementById("errorTitle");
+
+    const errorMessage =
+        document.getElementById("errorMessage");
+
+    const searchedId =
+        document.getElementById("searchedId");
 
 
     /*
-     * Get certificate ID from URL
+     * GET CERTIFICATE ID FROM URL
      *
      * Example:
      *
-     * ?id=DC-2026-0701
+     * ?id=DC-2026-0702
      */
 
-    const urlParams = new URLSearchParams(window.location.search);
+    const urlParams =
+        new URLSearchParams(window.location.search);
 
-    const requestedId = urlParams.get("id");
+    const requestedId =
+        urlParams.get("id");
 
 
     /*
-     * If no certificate ID is provided
+     * NO ID PROVIDED
      */
 
     if (!requestedId) {
@@ -50,148 +83,181 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /*
-     * Load certificate database
+     * LOAD DATA.JSON
      */
 
     fetch("data.json", {
         cache: "no-store"
     })
 
-        .then(function (response) {
+    .then(function (response) {
 
-            if (!response.ok) {
-                throw new Error("Unable to load data.json");
-            }
+        if (!response.ok) {
 
-            return response.json();
+            throw new Error(
+                "Unable to load certificate data."
+            );
 
-        })
+        }
+
+        return response.json();
+
+    })
 
 
-        .then(function (certificates) {
+    .then(function (certificates) {
 
 
-            /*
-             * Find matching certificate
-             */
+        /*
+         * FIND CERTIFICATE
+         */
 
-            const certificate = certificates.find(function (item) {
+        const certificate =
+            certificates.find(function (item) {
 
-                return String(item.certificateNo).trim().toUpperCase()
-                    === String(requestedId).trim().toUpperCase();
+                return String(item.certificateNo)
+                    .trim()
+                    .toUpperCase()
+                    ===
+                    String(requestedId)
+                    .trim()
+                    .toUpperCase();
 
             });
 
 
-            /*
-             * Certificate doesn't exist
-             */
+        /*
+         * INVALID CERTIFICATE
+         */
 
-            if (!certificate) {
-
-                showError(
-                    "Invalid Certificate",
-                    "Certificate not found or the verification ID is invalid.",
-                    requestedId
-                );
-
-                return;
-            }
-
-
-            /*
-             * Display certificate
-             */
-
-            displayCertificate(certificate);
-
-        })
-
-
-        .catch(function (error) {
-
-            console.error(error);
+        if (!certificate) {
 
             showError(
-                "Verification System Error",
-                "Unable to load certificate verification data. Please try again later.",
+                "Invalid Certificate",
+                "Certificate not found or the verification ID is invalid.",
                 requestedId
             );
 
-        });
+            return;
+        }
+
+
+        /*
+         * DISPLAY CERTIFICATE
+         */
+
+        displayCertificate(certificate);
+
+    })
+
+
+    .catch(function (error) {
+
+        console.error(error);
+
+        showError(
+            "Verification System Error",
+            "Unable to load certificate verification data. Please try again later.",
+            requestedId
+        );
+
+    });
 
 
     /*
-     * Display certificate function
+     * DISPLAY CERTIFICATE
      */
 
     function displayCertificate(certificate) {
 
 
         certificateNo.textContent =
-            certificate.certificateNo || "Not available";
+            certificate.certificateNo ||
+            "Not available";
 
 
         candidateName.textContent =
-            certificate.name || "Not available";
+            certificate.name ||
+            "Not available";
 
 
         candidateRoll.textContent =
-            certificate.roll || "Not available";
+            certificate.roll ||
+            "Not available";
 
 
         candidateMobile.textContent =
-            certificate.mobile || "Not available";
+            certificate.mobile ||
+            "Not available";
 
 
         candidateAddress.textContent =
-            certificate.address || "Not available";
-
-
-        institute.textContent =
-            certificate.institute || "Not available";
-
-
-        project.textContent =
-            certificate.project || "Not available";
-
-
-        training.textContent =
-            certificate.training || "Not available";
-
-
-        score.textContent =
-            certificate.score || "0";
+            certificate.address ||
+            "Not available";
 
 
         /*
-         * Candidate photo
+         * INSTITUTE
+         *
+         * If institute is missing from data.json,
+         * show "Not available".
+         */
+
+        institute.textContent =
+            certificate.institute ||
+            "Not available";
+
+
+        project.textContent =
+            certificate.project ||
+            "Not available";
+
+
+        training.textContent =
+            certificate.training ||
+            "Not available";
+
+
+        score.textContent =
+            certificate.score ||
+            "0";
+
+
+        /*
+         * PHOTO
          */
 
         if (certificate.photo) {
 
-            candidatePhoto.src = certificate.photo;
+            candidatePhoto.src =
+                certificate.photo;
+
+            candidatePhoto.style.display =
+                "block";
 
         } else {
 
-            candidatePhoto.style.display = "none";
+            candidatePhoto.style.display =
+                "none";
 
         }
 
 
         /*
-         * If candidate photo fails to load
+         * PHOTO ERROR
          */
 
-        candidatePhoto.onerror = function () {
+        candidatePhoto.onerror =
+            function () {
 
-            this.style.display = "none";
+                this.style.display =
+                    "none";
 
-        };
+            };
 
 
         /*
-         * Show certificate
+         * SHOW CERTIFICATE
          */
 
         loading.classList.add("hidden");
@@ -200,18 +266,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
         certificateContent.classList.remove("hidden");
 
+
+        /*
+         * CHANGE PAGE TITLE
+         */
+
         document.title =
-            certificate.name +
+            (certificate.name || "Certificate") +
             " | Certificate Verification | Dhruva Construction & Real Estate";
 
     }
 
 
     /*
-     * Error function
+     * ERROR FUNCTION
      */
 
-    function showError(title, message, id) {
+    function showError(
+        title,
+        message,
+        id
+    ) {
 
         loading.classList.add("hidden");
 
@@ -219,11 +294,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         errorBox.classList.remove("hidden");
 
-        errorTitle.textContent = title;
 
-        errorMessage.textContent = message;
+        errorTitle.textContent =
+            title;
 
-        searchedId.textContent = id || "Not provided";
+
+        errorMessage.textContent =
+            message;
+
+
+        searchedId.textContent =
+            id || "Not provided";
+
 
         document.title =
             "Invalid Certificate | Dhruva Construction & Real Estate";
