@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -13,367 +14,394 @@
     <title>Certificate Verification | Dhruva Construction & Real Estate</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <main class="page">
+<main class="page">
 
-        <!-- COMPANY HEADER -->
-        <header class="company-header">
+    <!-- COMPANY HEADER -->
 
-            <div class="logo-wrapper">
-                <img
-                    src="images/logo.png"
-                    alt="Dhruva Construction & Real Estate Logo"
-                    class="company-logo"
-                    onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';"
-                >
+    <header class="company-header">
 
-                <div id="logoFallback" class="logo-fallback">
-                    D
-                </div>
+        <div class="logo-wrapper">
+
+            <img
+                src="images/logo.png"
+                alt="Dhruva Construction & Real Estate Logo"
+                class="company-logo"
+                onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';"
+            >
+
+            <div id="logoFallback" class="logo-fallback">
+                D
             </div>
 
-            <div class="company-info">
+        </div>
 
-                <h1>
-                    DHRUVA CONSTRUCTION &amp; REAL ESTATE
-                </h1>
 
-                <p>
-                    Certificate Verification Portal
+        <div class="company-info">
+
+            <h1>
+                DHRUVA CONSTRUCTION &amp; REAL ESTATE
+            </h1>
+
+            <p>
+                Certificate Verification Portal
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- VERIFICATION STATUS -->
+
+    <section class="verification-status">
+
+        <div class="verified-icon">
+            ✓
+        </div>
+
+        <div>
+
+            <h2>
+                CERTIFICATE VERIFIED
+            </h2>
+
+            <p>
+                This certificate has been successfully verified.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOADING -->
+
+    <section id="loading" class="message-card">
+
+        <div class="loader"></div>
+
+        <p>
+            Verifying certificate...
+        </p>
+
+    </section>
+
+
+    <!-- ERROR -->
+
+    <section id="errorBox" class="error-card hidden">
+
+        <div class="error-icon">
+            !
+        </div>
+
+        <h2 id="errorTitle">
+            Invalid Certificate
+        </h2>
+
+        <p id="errorMessage">
+            Certificate not found.
+        </p>
+
+        <div class="searched-id">
+
+            <strong>
+                Verification ID:
+            </strong>
+
+            <span id="searchedId">
+                —
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- CERTIFICATE -->
+
+    <section id="certificateContent" class="certificate hidden">
+
+
+        <!-- CERTIFICATE NUMBER -->
+
+        <div class="certificate-number">
+
+            <span>
+                Certificate Number
+            </span>
+
+            <strong id="certificateNo">
+                —
+            </strong>
+
+        </div>
+
+
+        <!-- CANDIDATE -->
+
+        <div class="candidate-section">
+
+
+            <!-- PHOTO -->
+
+            <div class="photo-column">
+
+                <div class="photo-frame">
+
+                    <img
+                        id="candidatePhoto"
+                        src=""
+                        alt="Candidate Photograph"
+                    >
+
+                </div>
+
+                <p class="photo-label">
+                    Candidate Photograph
                 </p>
 
             </div>
 
-        </header>
+
+            <!-- DETAILS -->
+
+            <div class="personal-details">
+
+                <h3>
+                    Candidate Information
+                </h3>
 
 
-        <!-- VERIFICATION STATUS -->
-        <section class="verification-status">
+                <div class="detail-grid">
 
-            <div class="verified-icon">
+
+                    <div class="detail-item">
+
+                        <span class="label">
+                            Name
+                        </span>
+
+                        <span
+                            id="candidateName"
+                            class="value">
+                            —
+                        </span>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="label">
+                            Roll No.
+                        </span>
+
+                        <span
+                            id="candidateRoll"
+                            class="value">
+                            —
+                        </span>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="label">
+                            Mobile
+                        </span>
+
+                        <span
+                            id="candidateMobile"
+                            class="value">
+                            —
+                        </span>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="label">
+                            Address
+                        </span>
+
+                        <span
+                            id="candidateAddress"
+                            class="value">
+                            —
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TRAINING INFORMATION -->
+
+        <div class="section-card">
+
+            <h3>
+                Training Information
+            </h3>
+
+
+            <div class="information-row">
+
+                <span class="info-label">
+                    Institute
+                </span>
+
+                <span
+                    id="institute"
+                    class="info-value">
+                    Not available
+                </span>
+
+            </div>
+
+
+            <div class="information-row project-row">
+
+                <span class="info-label">
+                    Project
+                </span>
+
+                <span
+                    id="project"
+                    class="info-value">
+                    —
+                </span>
+
+            </div>
+
+
+            <div class="information-row">
+
+                <span class="info-label">
+                    Training Tenure
+                </span>
+
+                <span
+                    id="training"
+                    class="info-value">
+                    —
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- PERFORMANCE -->
+
+        <div class="performance-card">
+
+            <div>
+
+                <h3>
+                    Satisfactory Report
+                </h3>
+
+                <p>
+                    Candidate Performance
+                </p>
+
+            </div>
+
+
+            <div class="score">
+
+                <span id="score">
+                    0
+                </span>
+
+                <small>
+                    / 100
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUCCESS MESSAGE -->
+
+        <div class="success-message">
+
+            <div class="success-check">
                 ✓
             </div>
 
             <div>
-                <h2 id="statusTitle">
-                    CERTIFICATE VERIFIED
-                </h2>
-
-                <p id="statusMessage">
-                    This certificate has been successfully verified.
-                </p>
-            </div>
-
-        </section>
-
-
-        <!-- LOADING -->
-        <section id="loading" class="message-card">
-
-            <div class="loader"></div>
-
-            <p>
-                Verifying certificate...
-            </p>
-
-        </section>
-
-
-        <!-- ERROR -->
-        <section id="errorBox" class="error-card hidden">
-
-            <div class="error-icon">
-                !
-            </div>
-
-            <h2 id="errorTitle">
-                Invalid Certificate
-            </h2>
-
-            <p id="errorMessage">
-                Certificate not found.
-            </p>
-
-            <div class="searched-id">
-                <strong>Verification ID:</strong>
-                <span id="searchedId">—</span>
-            </div>
-
-        </section>
-
-
-        <!-- CERTIFICATE CONTENT -->
-        <section id="certificateContent" class="certificate hidden">
-
-
-            <!-- CERTIFICATE NUMBER -->
-            <div class="certificate-number">
-
-                <span>
-                    Certificate Number
-                </span>
-
-                <strong id="certificateNo">
-                    —
-                </strong>
-
-            </div>
-
-
-            <!-- CANDIDATE SECTION -->
-            <div class="candidate-section">
-
-
-                <!-- PHOTO -->
-                <div class="photo-column">
-
-                    <div class="photo-frame">
-
-                        <img
-                            id="candidatePhoto"
-                            src=""
-                            alt="Candidate Photograph"
-                        >
-
-                    </div>
-
-                    <p class="photo-label">
-                        Candidate Photograph
-                    </p>
-
-                </div>
-
-
-                <!-- PERSONAL DETAILS -->
-                <div class="personal-details">
-
-                    <h3>
-                        Candidate Information
-                    </h3>
-
-
-                    <div class="detail-grid">
-
-
-                        <div class="detail-item">
-
-                            <span class="label">
-                                Name
-                            </span>
-
-                            <span
-                                id="candidateName"
-                                class="value">
-                                —
-                            </span>
-
-                        </div>
-
-
-                        <div class="detail-item">
-
-                            <span class="label">
-                                Roll No.
-                            </span>
-
-                            <span
-                                id="candidateRoll"
-                                class="value">
-                                —
-                            </span>
-
-                        </div>
-
-
-                        <div class="detail-item">
-
-                            <span class="label">
-                                Mobile
-                            </span>
-
-                            <span
-                                id="candidateMobile"
-                                class="value">
-                                —
-                            </span>
-
-                        </div>
-
-
-                        <div class="detail-item">
-
-                            <span class="label">
-                                Address
-                            </span>
-
-                            <span
-                                id="candidateAddress"
-                                class="value">
-                                —
-                            </span>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- TRAINING INFORMATION -->
-            <div class="section-card">
 
                 <h3>
-                    Training Information
+                    Certificate Successfully Generated
                 </h3>
 
-
-                <div class="information-row">
-
-                    <span class="info-label">
-                        Institute
-                    </span>
-
-                    <span
-                        id="institute"
-                        class="info-value">
-                        —
-                    </span>
-
-                </div>
-
-
-                <div class="information-row project-row">
-
-                    <span class="info-label">
-                        Project
-                    </span>
-
-                    <span
-                        id="project"
-                        class="info-value">
-                        —
-                    </span>
-
-                </div>
-
-
-                <div class="information-row">
-
-                    <span class="info-label">
-                        Training Tenure
-                    </span>
-
-                    <span
-                        id="training"
-                        class="info-value">
-                        —
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- PERFORMANCE -->
-            <div class="performance-card">
-
-                <div>
-
-                    <h3>
-                        Satisfactory Report
-                    </h3>
-
-                    <p>
-                        Candidate Performance
-                    </p>
-
-                </div>
-
-
-                <div class="score">
-
-                    <span id="score">
-                        0
-                    </span>
-
-                    <small>
-                        / 100
-                    </small>
-
-                </div>
-
-            </div>
-
-
-            <!-- SUCCESS MESSAGE -->
-            <div class="success-message">
-
-                <div class="success-check">
-                    ✓
-                </div>
-
-                <div>
-
-                    <h3>
-                        Certificate Successfully Generated
-                    </h3>
-
-                    <p>
-                        This certificate has been successfully
-                        generated and verified by
-                    </p>
-
-                    <strong>
-                        DHRUVA CONSTRUCTION &amp; REAL ESTATE
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <!-- FOOTER CERTIFICATE INFO -->
-            <div class="certificate-footer">
-
                 <p>
-                    This digital verification confirms the
-                    authenticity of the certificate details
-                    associated with the above certificate number.
+                    This certificate has been successfully
+                    generated and verified by
                 </p>
-
-                <div class="footer-line"></div>
 
                 <strong>
                     DHRUVA CONSTRUCTION &amp; REAL ESTATE
                 </strong>
 
-                <span>
-                    Official Certificate Verification System
-                </span>
-
             </div>
 
-
-        </section>
-
-
-        <!-- SITE FOOTER -->
-        <footer class="site-footer">
-
-            © 2026 Dhruva Construction &amp; Real Estate
-
-        </footer>
-
-    </main>
+        </div>
 
 
-    <script src="script.js"></script>
+        <!-- FOOTER -->
+
+        <div class="certificate-footer">
+
+            <p>
+                This digital verification confirms the
+                authenticity of the certificate details
+                associated with the above certificate number.
+            </p>
+
+            <div class="footer-line"></div>
+
+            <strong>
+                DHRUVA CONSTRUCTION &amp; REAL ESTATE
+            </strong>
+
+            <span>
+                Official Certificate Verification System
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- WEBSITE FOOTER -->
+
+    <footer class="site-footer">
+
+        © 2026 Dhruva Construction &amp; Real Estate
+
+    </footer>
+
+</main>
+
+
+<script src="script.js"></script>
 
 </body>
 
